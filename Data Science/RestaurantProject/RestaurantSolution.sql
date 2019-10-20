@@ -38,7 +38,8 @@ AND price = '$$$';
 
 /* ===========================================================================================*/
 
-/* 7. Your coworker Trey can’t remember the exact name of a restaurant he went to but he knows it contains the word ‘meatball’ in it. Can you find it for him using a query? */
+/* 7. Your coworker Trey can’t remember the exact name of a restaurant he went to but he knows it contains the word 
+‘meatball’ in it. Can you find it for him using a query? */
 
 SELECT * FROM nomnom
 WHERE name like '%meatball%';
