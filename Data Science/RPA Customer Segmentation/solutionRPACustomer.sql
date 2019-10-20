@@ -3,19 +3,22 @@
  LIMIT 20;
  
  /* 
-The marketing department wants to send a Born in the ‘80s email to the appropriate users. Find the email addresses and birthdays of users whose birthday is between 1980-01-01 and 1989-12-31. */
+The marketing department wants to send a Born in the ‘80s email to the appropriate users. Find the email addresses and birthdays 
+of users whose birthday is between 1980-01-01 and 1989-12-31. */
 
 SELECT email AS 'Users born in 80s' FROM users
 WHERE birthday BETWEEN '1980-01-01' AND '1989-12-31';
 
 
-/* We are interested in the cohort of users that signed up prior to May 2017. Find the emails and creation date of users whose created_at date matches this condition. */
+/* We are interested in the cohort of users that signed up prior to May 2017. Find the emails and creation date of users whose 
+created_at date matches this condition. */
 
 SELECT email, created_at FROM users
 WHERE created_at < '2017-06-01' ORDER BY created_at ASC;
 
 
-/* There was an A/B test performed on users that used cute animal clipart to encourage users to sign up. We’d like to see how the group that was shown ‘bears’ is performing. Find the emails of the users who received the ‘bears’ test. */
+/* There was an A/B test performed on users that used cute animal clipart to encourage users to sign up. We’d like to see how 
+the group that was shown ‘bears’ is performing. Find the emails of the users who received the ‘bears’ test. */
 
 SELECT * FROM users
 WHERE test = 'bears';
