@@ -12,8 +12,8 @@ Limit 1;
 
 -- What were the 10 lowest population countries in 2005?
 
-SELECT DISTINCT country FROM population_years
-WHERE population NOT NULL
+SELECT DISTINCT country AS 'LOWEST POPULATION IN 2005' FROM population_years
+WHERE year = 2005
 ORDER BY population ASC 
 Limit 10;
 
