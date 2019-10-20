@@ -30,7 +30,7 @@ WHERE review >= 4;
 
 /* ===========================================================================================*/
 
-/* 6. Suppose Abbi and Ilana want to have a fancy dinner date. Return all the restaurants that are Italian and $$$.
+/* 6. Suppose Abbi and Ilana want to have a fancy dinner date. Return all the restaurants that are Italian and $$$. */
 
 SELECT * FROM nomnom
 WHERE cuisine = 'Italian' 
@@ -45,4 +45,53 @@ SELECT * FROM nomnom
 WHERE name like '%meatball%';
 
 /* ===========================================================================================*/
+
+/* 8. Let’s order delivery to the house! Find all the close by spots in Midtown, Downtown or Chinatown.
+(OR can be used more than once) */
+
+SELECT * FROM nomnom
+WHERE neighborhood = 'Midtown' OR
+neighborhood = 'Downtown' OR 
+neighborhood= 'Chinatown';
+
+/* ===========================================================================================*/
+
+/* 9. Find all the health grade pending restaurants (empty values). */
+
+SELECT * FROM nomnom
+WHERE health IS NULL;
+
+/* ===========================================================================================*/
+
+/* 10. Create a Top 10 Restaurants Ranking based on reviews. */
+
+SELECT * FROM nomnom
+ORDER BY review DESC
+Limit 10;
+
+/* ===========================================================================================*/
+
+/* 11. Use a CASE statement to change the rating system to:
+
+review > 4.5 is Extraordinary
+review > 4 is Excellent
+review > 3 is Good
+review > 2 is Fair
+Everything else is Poor
+Don’t forget to rename the new column! */
+
+SELECT name,
+  CASE
+    WHEN review > 4.5 THEN 'Extraordinary'
+    WHEN review > 4 THEN 'Excellent'
+    WHEN review > 3 THEN 'Good'
+    WHEN review > 2 THEN 'Fair'
+  ELSE 'Poor'
+  END AS 'RestaurantQuality'
+FROM nomnom;
+
+/* ===========================================================================================*/
+
+
+
 
