@@ -2,22 +2,16 @@
  SELECT * FROM transaction_data
  LIMIT 10;
  
- /* The finance department noted that some of the fraudulent transactions were recorded as coming from Smokey Bear’s zip code (20252).
-
-You agree this is suspicious, it’s unlikely that the fire prevention 
-mascot is using Reputable Company’s services.
-
-Find the full_names and emails of the transactions listing 20252 as 
-the zip code. */
+ /* The finance department noted that some of the fraudulent transactions were recorded as coming from Smokey Bear’s 
+ zip code (20252). You agree this is suspicious, it’s unlikely that the fire prevention mascot is using Reputable 
+ Company’s services. Find the full_names and emails of the transactions listing 20252 as the zip code. */
 
 SELECT full_name, email FROM transaction_data
 WHERE zip = 20252;
 
-/* Finance has also noticed a number of pseudonyms associated with fraudulent transactions.
-
-The fraudsters thought it would be funny to use ‘Art Vandelay’ for their full name or add a ‘der’ for their middle name.
-
-Use a query to find the names and emails associated with these transactions. */
+/* Finance has also noticed a number of pseudonyms associated with fraudulent transactions. The fraudsters thought it would 
+be funny to use ‘Art Vandelay’ for their full name or add a ‘der’ for their middle name. Use a query to find the names 
+and emails associated with these transactions. */
 
 SELECT * FROM transaction_data
 WHERE full_name like 'Art Vandelay' OR full_name like '%der%';
