@@ -34,17 +34,16 @@ Find the ip_addresses and emails listed with these transactions. */
 SELECT ip_address, email FROM transaction_data
 WHERE ip_address like '10.%';
 
-/* Users are making fraudulent transactions using a temporary email address service. These services provide a short-lived email that can be verified and then self-destructs.
-
-Find the emails in transaction_data with ‘temp_email.com’ as a domain */
+/* Users are making fraudulent transactions using a temporary email address service. These services provide 
+a short-lived email that can be verified and then self-destructs. Find the emails in transaction_data with 
+‘temp_email.com’ as a domain */
 
 SELECT *  FROM transaction_data
 WHERE email like '%temp_email.com%';
 
 /* 
-The finance department is looking for a specific transaction. They know that the transaction occurred from an ip address starting with ‘120.’ and their full name starts with ‘John’.
-
-Can you find the transaction? */
+The finance department is looking for a specific transaction. They know that the transaction occurred from an
+ip address starting with ‘120.’ and their full name starts with ‘John’. Can you find the transaction? */
 
 SELECT * FROM transaction_data
 WHERE ip_address like '120.%' 
